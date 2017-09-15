@@ -2,22 +2,20 @@
 public class Rhombus extends Shape {
 
 	private final double a;
-	private final double d1;
-	private final double d2;
+	private final double angle;
 
 	public Rhombus() {
-		this(Shape.DEFAULT_VALUE, Shape.DEFAULT_VALUE, Shape.DEFAULT_VALUE);
+		this(Shape.DEFAULT_VALUE, Shape.DEFAULT_VALUE);
 	}
 
-	public Rhombus(double a, double d1, double d2) {
+	public Rhombus(double a, double angle) {
 		this.a = (a > 0) ? a : Shape.DEFAULT_VALUE;
-		this.d1 = (d1 > 0) ? d1 : Shape.DEFAULT_VALUE;
-		this.d2 = (d2 > 0) ? d2 : Shape.DEFAULT_VALUE;
+		this.angle = (angle > 0 && angle < 90) ? angle : Shape.DEFAULT_VALUE;
 	}
 
 	@Override
 	public double area() {
-		return (this.d1 * this.d2) / 2;
+		return a * (a * (Math.abs(Math.sin(Math.toRadians(angle)))));
 	}
 
 	@Override
@@ -27,6 +25,6 @@ public class Rhombus extends Shape {
 
 	@Override
 	public String toString() {
-		return "\nRhombus:: a = " + this.a + ", d1 = " + this.d1 + ", d2 = " + this.d2;
+		return "\nRhombus:: a = " + this.a + ", angle = " + this.angle;
 	}
 }

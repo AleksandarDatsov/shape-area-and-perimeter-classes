@@ -4,7 +4,7 @@ public class ShapesDemo {
 	public static void main(String[] args) {
 		DecimalFormat df = new DecimalFormat("####0.00");
 
-		Shape shape1 = new Rhombus(6, 4.4, 6);
+		Shape shape1 = new Rhombus(9, 12);
 		System.out.println(shape1 + "\nArea = " + df.format(shape1.area()));
 		System.out.println("Perimeter = " + df.format(shape1.perimeter()));
 
@@ -19,5 +19,6 @@ public class ShapesDemo {
 		Shape shape4 = new Square(7.2);
 		System.out.println(shape4 + "\nArea = " + df.format(shape4.area()));
 		System.out.println("Perimeter = " + df.format(shape4.perimeter()));
+		
 	}
 }
